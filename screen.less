@@ -35,10 +35,24 @@ a.external:visited {
     color: @menu-main-body-link-visited-color !important;
 }
 h1, h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid black;
+    border-bottom: none;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    border-top: 1px solid #a7d7f9;
+    margin-top: 2em;
+}
+img {
+    margin: 1em;
 }
 p {
 	line-height: @content-line-height;
+
+    img {
+        margin: 1em;
+    }
 }
 
 /* Content */
@@ -100,6 +114,11 @@ div.emptyPortlet {
 	list-style-image: none;
 	margin: 0;
 	padding-left: 10em; /* Keep from overlapping logo */
+
+
+    & li:before {
+        content: "";
+    }
 }
 #p-personal li {
 	line-height: 1.125em;
@@ -154,6 +173,10 @@ div.vectorTabs ul {
 	list-style-image: none;
 	margin: 0;
 	padding: 0;
+
+    & li:before {
+        content: "";
+    }
 }
 /* OVERRIDDEN BY COMPLIANT BROWSERS */
 div.vectorTabs ul li {
@@ -480,6 +503,10 @@ div#mw-panel div.portal div.body ul {
 	list-style-image: none;
 	padding: @menu-main-body-padding;
 	margin: 0;
+
+    & li:before {
+        content: "— ";
+    }
 }
 div#mw-panel div.portal div.body ul li {
 	line-height: 1.125em;
@@ -508,6 +535,10 @@ div#footer ul {
 	list-style-image: none;
 	margin: 0;
 	padding: 0;
+
+    & li:before {
+        content: "";
+    }
 }
 div#footer ul li {
 	margin: 0;
@@ -588,6 +619,10 @@ div#footer #footer-places li {
 		.background-image('images/preferences-break.png');
 		background-position: bottom right;
 		background-repeat: no-repeat;
+
+        &:before {
+            content: "";
+        }
 	}
 	/* Sadly, IE6 won't understand this */
 	#preftoc li:first-child {
@@ -655,12 +690,26 @@ div#footer #footer-places li {
 }
 
 ul {
-	list-style-type: disc;
-	.list-style-image('images/bullet-icon.png');
+	list-style-type: none;
+
+    & li:before {
+        content: "—";
+    }
 }
 
 pre, .mw-code {
 	line-height: 1.3em;
+    background-color: #FCFCFC;
+    border: 1px solid #A7D7F9;
+}
+
+div#toc {
+    li:before {
+        content: "";
+    }
+    span.tocnumber:after {
+        content: " ·";
+    }
 }
 
 /* Site Notice (includes notices from CentralNotice extension) */
